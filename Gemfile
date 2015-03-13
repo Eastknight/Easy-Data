@@ -38,3 +38,19 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'bootstrap-sass'
+gem 'bootswatch-rails'
+
+gem 'simple_form'
+gem "mongoid"
+gem 'haml-rails'
+gem 'devise'
+gem 'httparty'
+gem 'kaminari'
+
+
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
