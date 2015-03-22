@@ -45,6 +45,8 @@ GEM
       railties (>= 3.1)
     bson (2.3.0)
     builder (3.2.2)
+    chart-js-rails (0.0.8)
+      railties (> 3.1)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -64,6 +66,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.4.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     haml (4.0.6)
       tilt
     haml-rails (0.8.2)
@@ -88,6 +92,9 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.2)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
@@ -183,12 +190,15 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   bootswatch-rails
+  chart-js-rails
   coffee-rails (~> 4.0.0)
   devise
+  faker
   haml-rails
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   kaminari
   mongoid
   rails (= 4.1.7)

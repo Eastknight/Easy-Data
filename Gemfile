@@ -47,8 +47,9 @@ gem 'haml-rails'
 gem 'devise'
 gem 'httparty'
 gem 'kaminari'
-
-
+gem 'chart-js-rails'
+gem 'faker'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'better_errors'
