@@ -1,6 +1,28 @@
 class Api::BaseController < ApplicationController
-  before_filter :cors_preflight_check
-  after_filter :cors_set_access_control_headers
+
+  respond_to :json
+
+  skip_before_action :verify_authenticity_token
+
+  before_action :cors_preflight_check
+  after_action :cors_set_access_control_headers
+
+  before_action :authenticate_from_user_token!
+  before_action :authenticate_user!
+
+  def authenticate_from_user_token!
+
+    if request.method == "POST"
+      token = params[:auth_token]
+      user = User.where(authentication_token: token).first
+
+      if user
+        sign_in user, store: false
+      else
+        render json: {error: "Unauthorized"},status: :unauthorized and return
+      end
+    end
+  end
 
   private
 

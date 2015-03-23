@@ -1,10 +1,12 @@
 var _easy_data = (function (){
 
   var _ed_url = "http://localhost:3000/events.json";
+  var _ed_authToken = "Use your own user authentication token here."
 
   return function (_event_name){
     var _ed_event = {
-      name: _event_name
+      name:        _event_name,
+      auth_token:  _ed_authToken 
     };
     var _ed_request = new XMLHttpRequest();
     _ed_request.open("POST", _ed_url, true);
