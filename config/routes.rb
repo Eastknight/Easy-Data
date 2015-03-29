@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 
-  resources :domains
+  resources :domains do
+    resources :verification, only: [:create]
+  end
 
   devise_for :users
   root to: 'home#index'

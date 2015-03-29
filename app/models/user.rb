@@ -39,6 +39,16 @@ class User
 
   has_many :domains
 
+  def domain_from_caller(referer)
+    uri = URI.parse(referer)
+    request_origin = "#{uri.scheme}://#{uri.host}"
+
+    if uri.port != 80
+      request_origin += ":#{uri.port}"
+    end
+    self.domains.where(url: request_origin).first
+  end
+
   private
 
   def generate_authentication_token

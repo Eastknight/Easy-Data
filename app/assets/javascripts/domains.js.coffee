@@ -1,5 +1,11 @@
 
 jQuery ->
+  $('#toggleInstructions').click ->
+    $('#docs').toggle()
+    # if 
+    # $("#toggleInstructions")
+    return
+
   data = {
     labels : ["January","February","March","April","May","June","July"],
     datasets : [

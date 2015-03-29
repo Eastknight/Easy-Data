@@ -2,7 +2,7 @@ class Event
   include Mongoid::Document
   include Mongoid::Timestamps
   field :name, type: String
-  field :created_on: Date
+  field :created_on, type: Date
 
   embedded_in :domain
 

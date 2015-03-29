@@ -18,3 +18,4 @@ var _easy_data = (function (){
     _ed_request.send(JSON.stringify(_ed_event));
   };
 }());
+
