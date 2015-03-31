@@ -6,6 +6,8 @@ class Event
 
   embedded_in :domain
 
+  index({name: 1})
+
   before_create :set_date
 
   private

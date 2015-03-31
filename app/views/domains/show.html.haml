@@ -13,6 +13,11 @@
     .text-left
     = link_to "Ok, it's there", domain_verification_index_path(@domain), method: :post, class: "btn btn-success btn-lg"
 - else
+
+  #events-month{data: {events: events_chart_data(@domain, 30)}}
+  #events-week{data: {events: events_chart_data(@domain, 7)}}
+  #events-three-days{data: {events: events_chart_data(@domain, 3)}}
+  #events-day{data: {events: events_chart_data(@domain, 1)}}
   .text-right
     - if @events.empty?
       %button.btn.btn-primary{id: "toggleInstructions"} Hide Instructions
@@ -62,9 +67,61 @@
       %pre
         :escaped
           <button onclick="_easy_data('Sign up Button Clicked')">Sign up</button>
-  %hr/
+  %hr
   .page-header
     %h2 Events
-    - @events.each do |event|
-      %p= event.name
+    %hr
+    .tabbable
+      %ul.nav.nav-tabs
+        %li.active
+          %a#today{"data-toggle" => "tab", :href => ""} Today
+        %li
+          %a#three-days{"data-toggle" => "tab", :href => ""} Last 3 Days
+        %li
+          %a#week{"data-toggle" => "tab", :href => ""} Last Week
+        %li
+          %a#month{"data-toggle" => "tab", :href => ""} Last Month
+      / .tab-content
+      /   #tab1.tab-pane.active
+      /     %p I'm in Section 1.
+      /   #tab2.tab-pane
+      /     %p Howdy, I'm in Section 2.
+    %br
     %canvas#canvas{:height => "450", :width => "600"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

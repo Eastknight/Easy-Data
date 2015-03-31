@@ -10,7 +10,7 @@ class Domain
 
   validates_presence_of :name, :url
   embeds_many :events
-  belongs_to :user
+  belongs_to :user, index: true
 
   before_create :generate_verification_token
   before_validation :normalize_url

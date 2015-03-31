@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :verification, only: [:create]
   end
 
+  authenticated :user do
+    root :to => "domains#index", as: :logged_in_root
+  end
+
   devise_for :users
   root to: 'home#index'
 

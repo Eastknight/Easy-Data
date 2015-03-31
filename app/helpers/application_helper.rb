@@ -14,5 +14,18 @@ module ApplicationHelper
       "alert-info"
     end
   end
+
+  def events_chart_data(domain, days_ago)
+    start = days_ago.days.ago
+    events = domain.events
+    distinct_events = events.distinct(:name)
+    data = distinct_events.map do |name|
+      {
+        name: name,
+        value: events.where(:name => name, :created_on.gte => start).count
+      }
+    end
+    data.to_json
+  end
   
 end
